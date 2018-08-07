@@ -14,7 +14,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with git-commit-id-plugin.  If not, see <http://www.gnu.org/licenses/>.
  */
-
 package pl.project13.maven.git;
 
 /**
@@ -24,7 +23,7 @@ package pl.project13.maven.git;
 @SuppressWarnings("JavaDoc")
 public class GitDescribeConfig {
 
-  /**
+    /**
    * If you don't use describe, you can always disable it and make the build a bit faster.
    *
    * Although it's highly recommended to use <pre>git-describe</pre> to identify your build state,
@@ -32,9 +31,9 @@ public class GitDescribeConfig {
    *
    * @parameter default-value=false
    */
-  private boolean skip;
+    private boolean skip;
 
-  /**
+    /**
    * <pre>--always</pre>
    * <p>Show uniquely abbreviated commit object as fallback.</p>
    *
@@ -42,9 +41,9 @@ public class GitDescribeConfig {
    *
    * @parameter default-value=true
    */
-  private boolean always;
+    private boolean always;
 
-  /**
+    /**
    * <pre>--dirty[=mark]</pre>
    * Describe the working tree. It means describe HEAD and appends mark (<pre>-dirty</pre> by default) if the
    * working tree is dirty.
@@ -53,9 +52,9 @@ public class GitDescribeConfig {
    *
    * @parameter default-value="devel"
    */
-  private String dirty;
+    private String dirty;
 
-  /**
+    /**
    *<pre>--match glob-pattern</pre>
    * Only consider tags matching the given pattern (can be used to avoid leaking private tags made from the repository).
    *
@@ -63,9 +62,9 @@ public class GitDescribeConfig {
    *
    * @parameter default-value="*"
    */
-  private String match;
+    private String match;
 
-  /**
+    /**
    * <pre>--abbrev=N</pre>
    * <p>
    * Instead of using the default <em>7 hexadecimal digits</em> as the abbreviated object name,
@@ -103,9 +102,9 @@ public class GitDescribeConfig {
    *
    * @parameter default-value=7
    */
-  private int abbrev;
+    private int abbrev;
 
-  /**
+    /**
    * <pre>--tags</pre>
    * <p>
    * Instead of using only the annotated tags, use any tag found in .git/refs/tags.
@@ -136,9 +135,9 @@ public class GitDescribeConfig {
    *
    * @parameter default-value=false
    */
-  private boolean tags;
+    private boolean tags;
 
-  /**
+    /**
    * <pre>--long</pre>
    *
    * Always output the long format (the tag, the number of commits and the abbreviated commit name)
@@ -149,86 +148,78 @@ public class GitDescribeConfig {
    *
    * <pre>false</pre> by default.
    */
-  private boolean forceLongFormat;
+    private boolean forceLongFormat;
 
-  public GitDescribeConfig() {
-  }
+    public GitDescribeConfig() {
+    }
 
-  public GitDescribeConfig(boolean always, String dirty, String match, Integer abbrev, boolean forceLongFormat, boolean tags) {
-    this.always = always;
-    this.dirty = dirty;
-    this.match = match;
-    this.abbrev = abbrev;
-    this.forceLongFormat = forceLongFormat;
-    this.tags = tags;
-  }
+    public GitDescribeConfig(boolean always, String dirty, String match, Integer abbrev, boolean forceLongFormat, boolean tags) {
+        this.always = always;
+        this.dirty = dirty;
+        this.match = match;
+        this.abbrev = abbrev;
+        this.forceLongFormat = forceLongFormat;
+        this.tags = tags;
+    }
 
-  public boolean isAlways() {
-    return always;
-  }
+    public boolean isAlways() {
+        return always;
+    }
 
-  public void setAlways(boolean always) {
-    this.always = always;
-  }
+    public void setAlways(boolean always) {
+        this.always = always;
+    }
 
-  public String getDirty() {
-    return dirty;
-  }
+    public String getDirty() {
+        return dirty;
+    }
 
-  public void setDirty(String dirty) {
-    this.dirty = dirty;
-  }
+    public void setDirty(String dirty) {
+        this.dirty = dirty;
+    }
 
-  public String getMatch() {
-    return match;
-  }
+    public String getMatch() {
+        return match;
+    }
 
-  public void setMatch(String match) {
-    this.match = match;
-  }
+    public void setMatch(String match) {
+        this.match = match;
+    }
 
-  public int getAbbrev() {
-    return abbrev;
-  }
+    public int getAbbrev() {
+        return abbrev;
+    }
 
-  public void setAbbrev(int abbrev) {
-    this.abbrev = abbrev;
-  }
+    public void setAbbrev(int abbrev) {
+        this.abbrev = abbrev;
+    }
 
-  public boolean isSkip() {
-    return skip;
-  }
+    public boolean isSkip() {
+        return skip;
+    }
 
-  public void setSkip(boolean skip) {
-    this.skip = skip;
-  }
+    public void setSkip(boolean skip) {
+        this.skip = skip;
+    }
 
-  public boolean getForceLongFormat() {
-    return forceLongFormat;
-  }
+    public boolean getForceLongFormat() {
+        return forceLongFormat;
+    }
 
-  public void setForceLongFormat(boolean forceLongFormat) {
-    this.forceLongFormat = forceLongFormat;
-  }
+    public void setForceLongFormat(boolean forceLongFormat) {
+        this.forceLongFormat = forceLongFormat;
+    }
 
-  public boolean getTags() {
-    return tags;
-  }
+    public boolean getTags() {
+        return tags;
+    }
 
-  public void setTags(boolean tags) {
-    this.tags = tags;
-  }
+    public void setTags(boolean tags) {
+        this.tags = tags;
+    }
 
-  @Override
-  public String toString() {
-    return "GitDescribeConfig{" +
-        "skip=" + skip +
-        ", always=" + always +
-        ", dirty='" + dirty + '\'' +
-        ", match='" + match + '\'' +
-        ", abbrev=" + abbrev +
-        ", tags=" + tags +
-        ", forceLongFormat=" + forceLongFormat +
-        '}';
-  }
+    @Override
+    public String toString() {
+        return "GitDescribeConfig{" + "skip=" + skip + ", always=" + always + ", dirty='" + dirty + '\'' + ", match='" + match + '\'' + ", abbrev=" + abbrev + ", tags=" + tags + ", forceLongFormat=" + forceLongFormat + '}';
+    }
 }
